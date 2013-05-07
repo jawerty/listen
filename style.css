@@ -1,0 +1,41 @@
+img {
+	margin-top:3px;
+	margin-right:8px;
+	width: 65px;
+	height: 45px;
+	float:left;
+}
+h1 {
+	margin: 0 auto;
+	float:left;
+	font-size: 50px;
+	color: #444;
+	font-family: helvetica;
+}
+audio {
+	margin-top: 30px;
+	background-color: #ab2020;
+	border-radius: 10px;
+	box-shadow: 1px 1px 4px 0px #444;
+	border: none;
+}
+audio:focus {
+	outline-width: 0;
+}
+#container {
+	width: 420px;
+
+	text-align: center;
+}
+#logo_div {
+	width: 50%;
+    margin: 0 auto;
+}
+#play_div {
+	width: 50%;
+    margin: 0 auto;
+}
+#play {
+	height: 100px;
+	width: 100px;
+}

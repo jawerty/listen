@@ -1,0 +1,34 @@
+<html>
+  <script type='text/javascript'>
+  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  if(message.method == "getStorage"){
+    if(message.extensionSettings === "storage") {
+      // send local storage data {"one": "data", "two": "data"}
+      sendResponse({storageString: background.localStorage.extdata});
+    }
+  }
+  else if(message.method == "setStorage"){
+    // save new data from content script
+    localStorage.setItem("extdata", message.newData);
+  }
+  });
+    chrome.tabs.getSelected(null, function(tab) {
+      url = tab.url;
+    });
+    var response = '';
+    $.ajax({ 
+        type: "GET",   
+        url: url,   
+        async: false,
+        success : function(text)
+        {
+            response = text;
+            
+        }
+    });
+    function getData(){
+      return response
+    }
+
+  </script>
+</html>

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "listen",
+  "description": "Text to speech app for listening to any website at the click of a button",
+  "version": "1.0",
+  "background": {
+  	 "page": "background.html"
+  	},
+  "content_scripts": [
+	{
+	 "matches": [
+	   "http://*/*",
+	   "https://*/*"
+	 ],
+	 "js": [
+	   "pjscrape.js",
+	   "jquery-1.9.1.min.js",
+	   "listen.js"
+	  ],
+	  "run_at": "document_start"
+	}
+  ],
+  "permissions": [
+	"cookies",
+    "tabs",
+	"history",
+	"http://*/*",
+	"https://*/*"
+  ],
+  "browser_action": {
+    "default_popup": "index.html"
+  }
+}
