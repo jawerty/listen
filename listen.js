@@ -45,11 +45,11 @@ $(function main(){
     
     $(function() {
      $('#play').mousedown(function(){
-       $("#play").attr('src',"play_clicked.png");
+       $("#play").attr('src',"images/play_clicked.png");
        return false;
      }).mouseup(function(){
        $("#play").css("display", "none")
-       $("#play").attr('src',"play.png");
+       $("#play").attr('src',"images/play.png");
        listen("Hello World", 1)
        return false; 
      })

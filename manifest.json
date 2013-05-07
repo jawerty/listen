@@ -13,8 +13,7 @@
 	   "https://*/*"
 	 ],
 	 "js": [
-	   "pjscrape.js",
-	   "jquery-1.9.1.min.js",
+	   "scripts/jquery-1.9.1.min.js",
 	   "listen.js"
 	  ],
 	  "run_at": "document_start"
