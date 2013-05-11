@@ -1,12 +1,12 @@
+$("#controls").css("display", "none")
+
 url="http://google.com"; 
-chrome.runtime.sendMessage({method:"getStorage",extensionSettings:"storage"},
-function(response) {
-  var json = JSON.parse(response.storageString);
-
-  alert(json);
-
-  var sendBack = {"one": "new data", "two": "more new data"};
-  chrome.runtime.sendMessage({method:"setStorage", newData:sendBack});
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+  chrome.tabs.onMessage.addListener(function(msg, sender, sendResponse) {
+    if (msg.action == 'open_dialog_box') {
+      alert("Message recieved!");
+    }
+  });
 });
 
 $(function main(){
@@ -29,7 +29,7 @@ $(function main(){
             child.setAttribute("autoplay","autoplay");
             if (looped) child.setAttribute("loop","loop");
             child.setAttribute("controls", "controls");
-
+            child.setAttribute("style", "margin: 30px 0px;");
             child.addEventListener("load", function() {
                 child.play();
             });
@@ -38,19 +38,20 @@ $(function main(){
                 child.remove()
                 $("#play").css("display", "block")
             })
-            document.getElementById("container").appendChild(child);
+            $("#controls").css("display", "block")
+            document.getElementById("controls").appendChild(child);
         }, delay);
     };
-
     
     $(function() {
      $('#play').mousedown(function(){
        $("#play").attr('src',"images/play_clicked.png");
        return false;
      }).mouseup(function(){
+       $("#body_text").css("display", "none")
        $("#play").css("display", "none")
        $("#play").attr('src',"images/play.png");
-       listen("Hello World", 1)
+       listen("Hello World. My name is Jared Wright and this is listen for chrome. Listen is a text to speech app for 'listening' to the text of any website at the click of a button", 1)
        return false; 
      })
     })

@@ -1,41 +1,80 @@
-img {
-	margin-top:3px;
-	margin-right:8px;
-	width: 65px;
-	height: 45px;
-	float:left;
+@font-face {
+	font-family: walkway;
+	src: url('../images/Walkway_SemiBold.ttf');
 }
-h1 {
-	margin: 0 auto;
-	float:left;
-	font-size: 50px;
-	color: #444;
+
+@font-face {
+	font-family: walkway_bold;
+	src: url('../images/Walkway_Bold.ttf');
+}
+
+body {
+	padding:10px;
 	font-family: helvetica;
 }
+
+img {
+	margin-top:5px;
+	margin-right: 3px;
+	width: 65px;
+	height: 45px;
+}
+
+#listen {
+	margin: 0 auto;
+	font-size: 50px;
+	color: #444;
+	font-family: walkway;
+	border-bottom: 1px solid #444;
+	text-decoration: none;
+}
+
+#listen:hover {
+	color: #999;
+	border-bottom: 0px solid #999;
+	cursor: pointer;
+}
+
+p {
+	font-size: 12pt;
+	margin-top: 40px;
+}
+
 audio {
-	margin-top: 30px;
-	background-color: #ab2020;
+	background-color: red;
 	border-radius: 10px;
 	box-shadow: 1px 1px 4px 0px #444;
 	border: none;
 }
-audio:focus {
+
+audio:focus, a:focus {
 	outline-width: 0;
 }
-#container {
-	width: 420px;
 
+#container {
+	width: 340px;
 	text-align: center;
 }
+
+#controls {
+	margin: 20px 0px 20px 0px;
+}
+
 #logo_div {
-	width: 50%;
     margin: 0 auto;
 }
+
 #play_div {
-	width: 50%;
     margin: 0 auto;
 }
+
 #play {
 	height: 100px;
 	width: 100px;
+	margin: 0 auto;
+}
+
+#footer {
+	float:left;
+	font-size: 8pt;
 }
