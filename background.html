@@ -1,34 +1,52 @@
 <html>
-  <script type='text/javascript'>
-  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if(message.method == "getStorage"){
-    if(message.extensionSettings === "storage") {
-      // send local storage data {"one": "data", "two": "data"}
-      sendResponse({storageString: background.localStorage.extdata});
-    }
-  }
-  else if(message.method == "setStorage"){
-    // save new data from content script
-    localStorage.setItem("extdata", message.newData);
-  }
-  });
-    chrome.tabs.getSelected(null, function(tab) {
-      url = tab.url;
-    });
-    var response = '';
-    $.ajax({ 
-        type: "GET",   
-        url: url,   
-        async: false,
-        success : function(text)
-        {
-            response = text;
-            
-        }
-    });
-    function getData(){
-      return response
-    }
+<head>
+<script type='text/javascript'>
+var child;
+looped = true;
+vol=1;   
+delay=0;
 
-  </script>
+   
+
+var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 'runtime' : 'extension';
+
+console.log("Running background...");
+content = "Hello World. My name is Jared Wright and this is listen for chrome. Listen is a text to speech app for 'listening' to the text of any website at the click of a button";
+
+chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
+  if(message.text == "startListen")
+  	console.log("initiating")
+  else if(message.text == "play")
+  	var text_mod = content.replace(' ', '+')
+	api="http://tts-api.com/tts.mp3?q="+text_mod;
+	child = document.createElement("audio");
+	child.setAttribute("src",api);
+	child.setAttribute("id","listen");
+	child.volume=vol;
+	child.load();
+	child.setAttribute("autoplay","autoplay");
+	if (looped) child.setAttribute("loop","loop");
+	child.setAttribute("controls", "controls");
+	child.setAttribute("style", "margin: 30px 0px;");
+	child.addEventListener("load", function() {
+	    child.play();
+	});
+	child.addEventListener("ended", function() {
+	    child.remove()
+	    $("#play").css("display", "block")
+	})
+	$("#controls").css("display", "block")
+	document.getElementById("controls").appendChild(child);
+	
+  else if(message.text == "pause")
+  	$("#listen").pause();
+    
+});
+</script>
+</head>
+
+<body>
+<div id='controls'></div>
+</body>
 </html>

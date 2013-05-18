@@ -20,6 +20,10 @@ img {
 	height: 45px;
 }
 
+label {
+
+}
+
 #listen {
 	margin: 0 auto;
 	font-size: 50px;
@@ -30,14 +34,34 @@ img {
 }
 
 #listen:hover {
-	color: #999;
+	color: #777;
 	border-bottom: 0px solid #999;
 	cursor: pointer;
 }
 
-p {
+#message_1 {
 	font-size: 12pt;
 	margin-top: 40px;
+}
+
+#message_2 {
+	font-size:8pt;
+	text-align: left;
+	display: inline-block;
+}
+
+#message_3 {
+    font-style:italic;
+	font-size:8pt;
+	display: inline-block;
+	text-align: right
+}
+
+#message_4 {
+	font-style:italic;
+	font-size:8pt;
+	display: inline-block;
+	margin-bottom: 16px;
 }
 
 audio {
@@ -74,7 +98,43 @@ audio:focus, a:focus {
 	margin: 0 auto;
 }
 
+#pause {
+	display: none;
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+}
+
 #footer {
-	float:left;
 	font-size: 8pt;
+	width:inherit;
+	text-align: justify;
+	height: 0;
+}
+
+#footer:after{
+	content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    font-size:0;
+    line-height:0;
+}
+
+#loading {
+	display: none;
+	margin: 0 auto;
+	margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+    background-image: url("../images/loading_ball_sprite.png");
+    -webkit-animation: bounce 1.2s steps(5) infinite;
+
+}
+
+@-webkit-keyframes bounce {
+   0% { background-position: 0px; 
+   	}
+   100% { background-position: 200px; 
+	}
 }
