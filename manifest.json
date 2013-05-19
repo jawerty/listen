@@ -9,8 +9,8 @@
     "128": "images/play_large.png" 
     },
   "background": {
-  	 "pages": ["background.html"]
-  	},
+    "page": "background.html"
+    },
   "content_scripts": [
 	{
 	 "matches": [
@@ -26,8 +26,7 @@
   ],
   "permissions": [
 	"cookies",
-    "tabs",
-	"history",
+  "tabs",
 	"http://*/*",
 	"https://*/*"
   ],
@@ -38,5 +37,6 @@
     },
     "default_title": "Listen",
     "default_popup": "index.html"
-  }
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }
