@@ -19,16 +19,17 @@
 	 ],
 	 "js": [
 	   "scripts/jquery-1.9.1.min.js",
+     "scripts/pdf.js",
 	   "listen.js"
 	  ]
 	}
 
   ],
   "permissions": [
-	"cookies",
-  "tabs",
-	"http://*/*",
-	"https://*/*"
+	  "webRequest",
+    "tabs",
+	  "http://*/*",
+	  "https://*/*"
   ],
   "browser_action": {
   	"default_icon": {                    

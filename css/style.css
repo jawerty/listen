@@ -31,11 +31,25 @@ label {
 	font-family: walkway;
 	border-bottom: 1px solid #444;
 	text-decoration: none;
+	margin-bottom: 20px;
 }
 
 #listen:hover {
 	color: #777;
 	border-bottom: 0px solid #999;
+	cursor: pointer;
+}
+
+#stop {
+	margin: 0 auto;
+	font-size: 30px;
+	color: #666;
+	font-family: walkway;
+	text-decoration: none;
+}
+
+#stop:hover {
+	color: #999;
 	cursor: pointer;
 }
 
@@ -45,14 +59,14 @@ label {
 }
 
 #message_2 {
-	font-size:8pt;
+	font-size:10pt;
 	text-align: left;
 	display: inline-block;
 }
 
 #message_3 {
     font-style:italic;
-	font-size:8pt;
+	font-size:10pt;
 	display: inline-block;
 	text-align: right
 }
@@ -62,6 +76,11 @@ label {
 	font-size:8pt;
 	display: inline-block;
 	margin-bottom: 16px;
+}
+
+#message_5 {
+	font-size:10pt;
+	display: inline-block;
 }
 
 audio {
@@ -86,10 +105,12 @@ audio:focus, a:focus {
 
 #logo_div {
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 #play_div {
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 #play {
