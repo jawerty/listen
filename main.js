@@ -1,13 +1,13 @@
 $(window).load(function () {
   if (child) {
-    child.currentTime = 0;
+    delete child;
   }
 });
 
 $("#play").mousedown(function(e){
 	$("#play").src = 'images/play_clicked.png';
 }).mouseup(function(e){
-  
+
   text = "Listen is a text to speech app for hearing the text on any website. \
   By the click of a button, the website's text is generated and played through the \
   tts-api. Another feature the Listen app has it the ability to read pdf pages. \
