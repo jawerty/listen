@@ -21,7 +21,7 @@ child.addEventListener("ended", function(e){
 $("#play").mousedown(function(e){
 	$("#play").src = 'images/play_clicked.png';
 }).mouseup(function(e){
-  $('#jawerty').trigger("play")
+  child.play();
 	$("#play").css('display', 'none');
 	$("#pause").css('display', 'inline');
 })
@@ -29,7 +29,7 @@ $("#play").mousedown(function(e){
 $('#pause').mousedown(function(e){
 	$("#pause").src = 'images/pause_clicked.png';
 }).mouseup(function(e){
-	$('#jawerty').trigger("pause")
+	child.pause();
   $("#pause").css('display', 'none');
   $("#play").src = 'images/play.png';
   $("#play").css('display', 'inline');
