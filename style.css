@@ -7,10 +7,14 @@ body {
   padding-top: 20px;
   padding-bottom: 40px;
 }
-
+#logo {
+  height: 100px;
+  width: 140px;
+}
 #play, #pause {
   width: 100px;
   height: 100px;
+  margin: 0 auto;
 }
 
 

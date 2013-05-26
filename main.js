@@ -1,7 +1,7 @@
 console.log('audio');
 
 text = "Listen is a text to speech app for hearing the text on any website. \
-By the click of a button, the website's text is generated and played through the \
+At the click of a button, the website's text is generated and played through the \
 tts-api. Another feature the Listen app has is the ability to read pdf pages. \
 This feature is in beta and somewhat delicate for production, so try not to read \
 pdf websites more than 5-10 pages long. For developers reading this, the source code \
