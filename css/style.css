@@ -4,13 +4,15 @@
 }
 
 body {
+  text-align: center;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
 #play, #pause {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 

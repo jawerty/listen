@@ -3,10 +3,19 @@ $(window).load(function () {
     child.currentTime = 0;
   }
 });
+
 $("#play").mousedown(function(e){
 	$("#play").src = 'images/play_clicked.png';
 }).mouseup(function(e){
-  api="http://tts-api.com/tts.mp3?q="+$('#readThis').text();
+  
+  text = "Listen is a text to speech app for hearing the text on any website. \
+  By the click of a button, the website's text is generated and played through the \
+  tts-api. Another feature the Listen app has it the ability to read pdf pages. \
+  This feature is in beta and somewhat delicate for production, so try not to read \
+  pdf websites more than 5-10 pages long. For developers reading this, the source code \
+  is hosted here on Github. Enjoy...";
+
+  api="http://tts-api.com/tts.mp3?q="+text;
   child = document.createElement("audio");
   child.setAttribute("src",api);
   child.load(); //reload the source (the source changes a lot)
