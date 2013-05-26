@@ -1,7 +1,7 @@
 $("#play").mousedown(function(e){
 	$("#play").src = 'images/play_clicked.png';
 }).mouseup(function(e){
-  api="http://tts-api.com/tts.mp3?q="+$('#readThis').innerText;
+  api="http://tts-api.com/tts.mp3?q="+$('#readThis').text();
   child = document.createElement("audio");
   child.setAttribute("src",api);
   child.load(); //reload the source (the source changes a lot)
