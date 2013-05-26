@@ -8,6 +8,10 @@ body {
   padding-bottom: 40px;
 }
 
+img {
+  width: 70%;
+  height: 70%;
+}
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
