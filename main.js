@@ -1,5 +1,6 @@
+var child = null
 $(window).load(function () {
-  if (child) {
+  if (child != null) {
     delete child;
   }
 });
