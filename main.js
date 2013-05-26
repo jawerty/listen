@@ -1,3 +1,8 @@
+$(window).load(function () {
+  if (child) {
+    child.currentTime = 0;
+  }
+});
 $("#play").mousedown(function(e){
 	$("#play").src = 'images/play_clicked.png';
 }).mouseup(function(e){
