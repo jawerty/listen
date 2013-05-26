@@ -1,3 +1,8 @@
+@font-face {
+  font-family: walkway;
+  src: url('../images/Walkway_SemiBold.ttf');
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 40px;
