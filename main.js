@@ -10,7 +10,7 @@ $("#play").mousedown(function(e){
   //event listener for when the audio ends
   //...mainly for control flow and a more intuitive UI
   child.addEventListener("ended", function(e){
-  	$("#play").src = '..images/play_large.png';
+  	$("#play").src = 'images/play_large.png';
   	$("#pause").css('display', 'none');
   	$("#play").css('display', 'block');
   });
@@ -24,6 +24,6 @@ $('#pause').mousedown(function(e){
 }).mouseup(function(e){
 	child.pause();
   $("#pause").css('display', 'none');
-  $("#play").src = '..images/play_large.png';
+  $("#play").src = 'images/play_large.png';
   $("#play").css('display', 'block');
 })
