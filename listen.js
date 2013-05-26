@@ -25,12 +25,11 @@ var port = chrome[runtimeOrExtension].connect({name: "listen_port"}); //port var
 
 port.postMessage({text:"startListen"});
 
-//so I can log messages in the background console
-var bkg = chrome.extension.getBackgroundPage();
-
 port.onMessage.addListener(function(msg){
   //initiated the UI
   if (msg.text == 'listening...'){
+    //so I can log messages in the background console
+    //var bkg = chrome.extension.getBackgroundPage();
     main(ended);
   }
 
@@ -85,7 +84,7 @@ port.onMessage.addListener(function(msg){
     $("#pause").css("display", "none");
   }
 
-  //when the background knows it's playing, do this.
+  //when the background tells the content_script it's playing, do this.
   if (msg.text == 'playing') {
     $("#loading").css("display", "block");
     $("#loading").css("-webkit-animation-play-state", "running");
@@ -97,7 +96,7 @@ port.onMessage.addListener(function(msg){
     }
   }
 
-  //when the background knows it's paused, do this.
+  //when the background tells the content_script it's paused, do this.
   if (msg.text == 'paused') {
     $("#loading").css("display", "block");
     $("#loading").css("-webkit-animation-play-state", "paused");
@@ -109,7 +108,7 @@ port.onMessage.addListener(function(msg){
     }
   }
 
-  //function for intiaiting the UI
+  //function for intiating the UI
   function main(ended){
     //so the main function isn't being executed hundreds of times  
     if (mainSent != true) {
@@ -179,6 +178,7 @@ port.onMessage.addListener(function(msg){
       port.postMessage({text:"stop"}); //tells background page that the stop button was clicked
       $("#stop").remove();  
       stopAdded = false;
+      window.close();
     });  
   }
 });
