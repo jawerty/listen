@@ -7,10 +7,27 @@ body {
   padding-top: 20px;
   padding-bottom: 40px;
 }
+
+a, a:hover {
+  color: #ab2020;
+}
+
+
+.red .active a,
+.red .active a:hover {
+    background-color: #ab2020;
+}
+
+.red .non-active a,
+.red .non-active a:hover {
+    color: #ab2020;
+}
+
 #logo {
   height: 100px;
   width: 140px;
 }
+
 #play, #pause {
   width: 100px;
   height: 100px;
