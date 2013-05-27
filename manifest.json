@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Listen",
   "description": "Text to speech app for listening to any website at the click of a button",
-  "version": "0.0.3.3",
+  "version": "0.0.3.5",
   "icons": { 
   	"16": "images/play_large.png",
     "48": "images/play_large.png",

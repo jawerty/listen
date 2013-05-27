@@ -29,7 +29,7 @@ port.onMessage.addListener(function(msg){
   //initiated the UI
   if (msg.text == 'listening...'){
     //so I can log messages in the background console
-    var bkg = chrome.extension.getBackgroundPage();
+    //var bkg = chrome.extension.getBackgroundPage();
     main(ended);
   }
 
@@ -111,7 +111,7 @@ port.onMessage.addListener(function(msg){
   //function for intiating the UI
   function main(ended){
     //so the main function isn't being executed hundreds of times 
-    bkg.console.log('listen started') 
+    console.log('listen started') 
     if (mainSent != true) {
       port.postMessage({text:'main'});
       mainSent = true;

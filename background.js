@@ -143,7 +143,7 @@ $(function wrapper(){	 //wrapper function
 
 						//strip certain HTML tags 
 						data = stripTags('code', stripTags('style', stripTags('script', rawData, doc), doc), doc);
-						data = data.replace(/\#/g,' ').replace(/\:/g,'.').replace(/\./g,'. ').replace(/\&/g,' and ').replace(/\*/g,' ').replace(/\$/g,' ').replace(/\;/g,'. ').replace(/\n\b\s\p\;/g,' ').replace(/\c\o\p\y\;/g,' copyright ')
+						data = data.replace(/\#/g,' ').replace(/\:/g,'.').replace(/\./g,'. ').replace(/\&/g,' and ').replace(/\*/g,' ').replace(/\$/g,' ').replace(/\;/g,'. ')
 		       			doc.body.innerHTML = data
 
 		       	//checks if it's a pdf url
@@ -227,10 +227,10 @@ $(function wrapper(){	 //wrapper function
 						child.pause();
 						child.load();
 						ended = true;
-					  port.postMessage({ended:ended});
-					  //refreshes the page when stopped so a new connection is made
-					  var code = 'window.location.reload();';
-  					chrome.tabs.executeScript(tabs[0].id, {code: code});
+					  	port.postMessage({ended:ended});
+					  	//refreshes the page when stopped so a new connection is made
+					  	var code = 'window.location.reload();';
+  						chrome.tabs.executeScript(tabs[0].id, {code: code});
 					} 
 
 					//whenever it's initiated
