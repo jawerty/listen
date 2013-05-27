@@ -29,7 +29,7 @@ port.onMessage.addListener(function(msg){
   //initiated the UI
   if (msg.text == 'listening...'){
     //so I can log messages in the background console
-    //var bkg = chrome.extension.getBackgroundPage();
+    var bkg = chrome.extension.getBackgroundPage();
     main(ended);
   }
 
@@ -60,12 +60,12 @@ port.onMessage.addListener(function(msg){
       $("#play_div").append("<p id='stop'>stop</p>");
       stopAdded = true;
     }
-
+    port.postMessage({text:"play"});
     $("#play").css("display", "none");
     $("#pause").css("display", "block");
     $("#loading").css("display", "block");
     $("#loading").css("-webkit-animation-play-state", "running");
-    port.postMessage({text:"play"});
+    
   }
 
   //when any audio is finished remove these messages and change the UI accordingly
@@ -110,7 +110,8 @@ port.onMessage.addListener(function(msg){
 
   //function for intiating the UI
   function main(ended){
-    //so the main function isn't being executed hundreds of times  
+    //so the main function isn't being executed hundreds of times 
+    bkg.console.log('listen started') 
     if (mainSent != true) {
       port.postMessage({text:'main'});
       mainSent = true;
@@ -124,6 +125,7 @@ port.onMessage.addListener(function(msg){
 
     }).mouseup(function(e){
       $("#play").css("display", "none");
+      port.postMessage({text:"play"});
       $("#play").attr('src',"images/play.png");
       $("#pause").css("display", "block");
       $("#pause").attr('src',"images/pause.png");
@@ -136,7 +138,7 @@ port.onMessage.addListener(function(msg){
       }
 
       //sends the message to play
-      port.postMessage({text:"play"});
+      
       return true; 
     });
 
@@ -154,13 +156,13 @@ port.onMessage.addListener(function(msg){
         $("#message_5").remove();
         pdfFinishMsg = false;
       }
-      
+      port.postMessage({text:"pause"});
       $("#pause").attr('src',"images/pause.png");
       $("#pause").css("display", "none");
       $("#play").css("display", "block");
       $("#play").attr('src',"images/play.png");
       $("#loading").css("-webkit-animation-play-state", "paused");
-      port.postMessage({text:"pause"}); //tells background that the audio should be paused   
+       //tells background that the audio should be paused   
       
       if (msgAdded == true) {
         $("#message_4").remove();
@@ -176,9 +178,10 @@ port.onMessage.addListener(function(msg){
       $("#play").attr('src',"images/play.png");
       $("#loading").css("display", "none");
       port.postMessage({text:"stop"}); //tells background page that the stop button was clicked
+      window.close();
       $("#stop").remove();  
       stopAdded = false;
-      window.close();
+      
     });  
   }
 });

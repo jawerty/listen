@@ -27,7 +27,7 @@ delay=0;
 var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
  'runtime' : 'extension';
 
-console.log("Running background...");
+//console.log("Running background...");
 
 //function for deleting all tags in a html document object for a specific tag
 //used when sanatizing text for readability
@@ -87,8 +87,8 @@ function for creating the audio child in the background.html file.
 */
 function createChild(text_mod, port){
 	playing = undefined
-  console.log("reinitiated");
-	console.log(text_mod)
+  //console.log("listen reinitiated");
+  console.log(text_mod)
 	//uses tts-api for audio
 	//http://tts-api.com
   api="http://tts-api.com/tts.mp3?q="+text_mod;
@@ -116,13 +116,6 @@ function is meant to wrap around code if something ever needed to be
 run before all the code
 */
 function queue(wrapper, callback) {
-	chrome.tabs.onActivated.addListener(function(tab) {
-	 	if (stopped == true) {
-	 		//do something for new audio
-	 	}
-	 	console.log('new activated tab') 
-	});
-
 	callback();
 }
 
@@ -150,8 +143,8 @@ $(function wrapper(){	 //wrapper function
 
 						//strip certain HTML tags 
 						data = stripTags('code', stripTags('style', stripTags('script', rawData, doc), doc), doc);
-
-		       	doc.body.innerHTML = data
+						data = data.replace(/\#/g,' ').replace(/\:/g,'.').replace(/\./g,'. ').replace(/\&/g,' and ').replace(/\*/g,' ').replace(/\$/g,' ').replace(/\;/g,'. ').replace(/\n\b\s\p\;/g,' ').replace(/\c\o\p\y\;/g,' copyright ')
+		       			doc.body.innerHTML = data
 
 		       	//checks if it's a pdf url
 						if (endsWith(url, '.pdf')) {
