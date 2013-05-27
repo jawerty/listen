@@ -9,6 +9,7 @@
     <meta name="keywords" content="listen, chrome, jared wright, jawerty, text to speech, app, extension, for">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/listen/kkncmmeidbdkjfehnmfhaincajcabamo">
   </head>
 
   <body>
@@ -29,7 +30,14 @@
 
         <h1 style='font-family: walkway;'>Listen for Chrome</h1>
 
-        <button class="btn btn-danger" style='margin: 30px 0px;' type="button" onclick="window.location = 'https://chrome.google.com/webstore/detail/listen/kkncmmeidbdkjfehnmfhaincajcabamo'">Install from Chrome Web Store</button>
+        <button class="btn" style='margin: 30px 0px;' type="button" onclick="window.location = 'https://chrome.google.com/webstore/detail/listen/kkncmmeidbdkjfehnmfhaincajcabamo'">Add to Chrome from Web Store</button>
+        <span class='lead'>or</span>
+        <button class="btn btn-inverse" onclick="chrome.webstore.install()" id="install-button">Add to Chrome now</button>
+        <script>
+        if (chrome.app.isInstalled) {
+          document.getElementById('install-button').style.display = 'none';
+        }
+        </script>
 
         <p id='readThis' class="lead">Listen is a text to speech chrome extension for hearing the text on <b>any</b> website. At the click of a button, the website's text is generated and played through the <a href='http://tts-api.com'>tts-api</a>. Another feature the Listen app has is the ability to read pdf pages. However, this feature is in <b>beta</b> and somewhat delicate for production, so try not to read pdf websites more than 5-10 pages long. For developers reading this, the source code is hosted <a href='https://github.com/jawerty/listen'>here</a> on Github. Enjoy...</p>
         <img src='images/play.png' id='play'></img>
