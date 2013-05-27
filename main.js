@@ -1,10 +1,10 @@
 
-text = "Listen is a text to speech app for hearing the text on any website. \
-At the click of a button, the website's text is generated and played through the \
-tts-api. Another feature the Listen app has is the ability to read pdf pages. \
-This feature is in beta and somewhat delicate for production, so try not to read \
-pdf websites more than 5-10 pages long. For developers reading this, the source code \
-is hosted here on Git hub. Enjoy...";
+text = "Listen is a text to speech chrome extension for hearing the text on any \
+website. At the click of a button, the website's text is generated and played through \
+the tts-api. Another feature the Listen app has is the ability to read pdf pages. However, this \
+feature is in beta and somewhat delicate for production, so try not to read pdf websites \
+more than 5-10 pages long. For developers reading this, the source code is hosted \
+here on Git hub. Enjoy...";
 
 api="http://tts-api.com/tts.mp3?q="+text;
 child = document.createElement("audio");

@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Listen for chrome</title>
+    <title>Listen for Chrome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Listen for chome: Text to speech app for 'listening' to the text on any website (even pdf).">
     <meta name="author" content="Jared Wright">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
@@ -25,9 +24,12 @@
 
       <hr>
 
-      <div class="jumbotron" style='text-align:center;'>
-        <h1 style='font-family: walkway;'>Listen for chrome</h1>
-        <p id='readThis' class="lead">Listen is a text to speech chrome extension for hearing the text on <b>any</b> website. At the click of a button, the website's text is generated and played through the <a href='http://tts-api.com'>tts-api</a>. Another feature the Listen app has is the ability to read pdf pages. This feature is in <b>beta</b> and somewhat delicate for production, so try not to read pdf websites more than 5-10 pages long. For developers reading this, the source code is hosted <a href='https://github.com/jawerty/listen'>here</a> on Github. Enjoy...</p>
+      <div class="jumbotron">
+        <h1 style='font-family: walkway;'>Listen for Chrome</h1>
+
+        <button class="btn btn-danger" style='margin: 30px 0px;' type="button" onclick="window.location = 'https://chrome.google.com/webstore/detail/listen/kkncmmeidbdkjfehnmfhaincajcabamo'">Install from Chrome Web Store</button>
+
+        <p id='readThis' class="lead">Listen is a text to speech chrome extension for hearing the text on <b>any</b> website. At the click of a button, the website's text is generated and played through the <a href='http://tts-api.com'>tts-api</a>. Another feature the Listen app has is the ability to read pdf pages. However, this feature is in <b>beta</b> and somewhat delicate for production, so try not to read pdf websites more than 5-10 pages long. For developers reading this, the source code is hosted <a href='https://github.com/jawerty/listen'>here</a> on Github. Enjoy...</p>
         <img src='images/play.png' id='play'></img>
         <img src='images/pause.png' id='pause' style='display:none;'></img>
         <br>
